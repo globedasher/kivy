@@ -1,0 +1,43 @@
+<PongGame>:
+    ball: pong_ball
+    crosshairs: cross
+
+    PongBall:
+        id: pong_ball
+
+    Crosshairs:
+        id: cross
+
+    Label:
+        font_size: 30
+        center_x: root.width / 2
+        top: root.top - 15
+        text: str(root.score)
+
+    Label:
+        font_size: 30
+        center_x: root.width / 2
+        top: root.top - 40
+        text: str(root.streak_notice)
+
+<PongBall>:
+    size: 50, 50
+    canvas:
+        Color:
+            rgba: 0, 0, 1, 1
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<Crosshairs>:
+    size: 30, 30
+    canvas:
+        Color:
+            rgba: 1, 0, 0, 1
+        Rectangle:
+            pos: self.pos[0], self.pos[1] - 14
+            size: 2, 30
+        Rectangle:
+            pos: 0, 14
+            pos: self.pos[0] - 14, self.pos[1]
+            size: 30, 2

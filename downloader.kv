@@ -1,0 +1,43 @@
+# This is the downloader.kv file for the matching downloader.py file
+
+<HomeScreen>:
+    # Variables linking to python code
+    #message_input: message_input
+    #message_display: message_display
+    url_name: url_name
+
+    BoxLayout:
+        # Layout configuration
+        orientation: "vertical"
+
+
+        # Label across the top of the application
+        Label:
+            text: "Welcome to Downloader"
+            color: 0, 1, 0, 1
+            background_color: 0, 0, 0, 1
+            size_hint: 1, .06
+
+        # BoxLayout with the TextInput and Send button
+        BoxLayout:
+            orientation: "horizontal"
+
+            Label:
+                text: "Enter a url."
+
+            TextInput:
+                id: url_name
+                focus: True
+                multiline: False
+                on_text_validate: root.on_enter(url_name)
+
+        Button:
+            text: "Ok"
+            on_release: root.download(url_name)
+
+
+# The display manager manages all of the views available for this application.
+# This is the Root Widget
+<DisplayManager>:
+    HomeScreen:
+        name: "screen_home"
