@@ -1,9 +1,16 @@
-<PongGame>:
-    ball: pong_ball
+<TargetGame>:
+    ball: target_ball
     crosshairs: cross
+    streak_notice: notice
 
-    PongBall:
-        id: pong_ball
+    canvas:
+        Color:
+            rgba: 0, 0, 0, 1
+        Rectangle:
+            size: root.size
+
+    TargetBall:
+        id: target_ball
 
     Crosshairs:
         id: cross
@@ -15,12 +22,12 @@
         text: str(root.score)
 
     Label:
+        id: notice
         font_size: 30
         center_x: root.width / 2
-        top: root.top - 40
-        text: str(root.streak_notice)
+        top: root.top - 45
 
-<PongBall>:
+<TargetBall>:
     size: 50, 50
     canvas:
         Color:
