@@ -85,15 +85,15 @@ class TargetGame(Widget):
 class Crosshairs(Widget):
     crosshairs = ObjectProperty(None)
 
-   #  def on_touch_down(self, touch):
-   #      #print(self.pos)
-   #      #print(touch.pos)
-   #      self.pos = touch.pos
+    def on_touch_down(self, touch):
+        #print(self.pos)
+        #print(touch.pos)
+        self.pos = touch.pos
 
-   #  def on_touch_move(self, touch):
-   #      #print(self.pos)
-   #      #print(touch.pos)
-   #      self.pos = touch.pos
+    def on_touch_move(self, touch):
+        #print(self.pos)
+        #print(touch.pos)
+        self.pos = touch.pos
 
 
 class TargetBall(Widget):
